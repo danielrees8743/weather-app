@@ -4,6 +4,7 @@ const forecast = (lat, lon, callback) => {
   const url = `http://api.weatherstack.com/current?access_key=ab25feff94b41a1108dbab211e2e2d08&query=${lat},${lon}`;
 
   request({ url, json: true }, (error, { body }) => {
+    console.log();
     const {
       weather_descriptions: description,
       temperature,
