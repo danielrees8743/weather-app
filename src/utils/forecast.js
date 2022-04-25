@@ -4,7 +4,6 @@ const forecast = (lat, lon, callback) => {
   const url = `http://api.weatherstack.com/current?access_key=ab25feff94b41a1108dbab211e2e2d08&query=${lat},${lon}`;
 
   request({ url, json: true }, (error, { body }) => {
-    console.log(body.current);
     const {
       weather_descriptions: description,
       temperature,
@@ -19,7 +18,7 @@ const forecast = (lat, lon, callback) => {
     } else {
       callback(
         undefined,
-        `${description}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees. The wind speed will be around ${wind_speed} km/h, coming from an ${wind_dir} direction`
+        `${description}. It is currently ${temperature} degrees out. It feels like ${feelslike} degrees. The wind speed will be around ${wind_speed} km/h, coming from a ${wind_dir} direction`
       );
     }
   });
